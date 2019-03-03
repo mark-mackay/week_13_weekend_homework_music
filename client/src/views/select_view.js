@@ -1,14 +1,12 @@
-const PubSub = require('../helpers/pub_sub.js');
-
+// const PubSub = require('../helpers/pub_sub.js');
+import PubSub from '../helpers/pub_sub.js';
 
 class SelectView {
-//
-//  constructor(element) {
-//    this.element = element;
-//  };
+
   constructor(element) {
     this.element = element;
   };
+
   bindEvents() {
     PubSub.subscribe('InstrumentFamilies:data-ready', (evt) => {
       const allInstrumentFamilies = evt.detail;
@@ -20,6 +18,7 @@ class SelectView {
         PubSub.publish('SelectView:change', selectedIndex);
       });
     };
+
   populate(instrumentFamilyData) {
       instrumentFamilyData.forEach((familiy, index) => {
         const option = document.createElement('option');
@@ -29,5 +28,5 @@ class SelectView {
       });
   };
 }
-
-module.exports = SelectView;
+export default SelectView;
+// module.exports = SelectView;

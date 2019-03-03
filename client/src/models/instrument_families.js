@@ -1,4 +1,5 @@
-const PubSub = require('../helpers/pub_sub.js');
+// const PubSub = require('../helpers/pub_sub.js');
+import PubSub from '../helpers/pub_sub.js';
 
 class InstrumentFamilies {
   constructor(data) {
@@ -20,6 +21,6 @@ class InstrumentFamilies {
 
 
 
+export default InstrumentFamilies;
 
-
-module.exports = InstrumentFamilies;
+// module.exports = InstrumentFamilies;
